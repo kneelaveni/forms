@@ -1,0 +1,20 @@
+{options.map((option, index) => (
+            <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+              <FormControlLabel
+                value={option}
+                control={<Radio />}
+                label={option}
+                disabled={showOtherOption}
+              />
+              {index !== options.length - 1 && (
+                <IconButton
+                  size="small"
+                  color="error"
+                  onClick={() => handleRemoveOption(index)}
+                  aria-label="Remove Option"
+                >
+                  <CancelIcon />
+                </IconButton>
+              )}
+            </div>
+          ))}
